@@ -9,6 +9,8 @@ node_modules/
 
 # 构建产物
 dist/
+dist-electron/
+release/
 out/
 *.tsbuildinfo
 
@@ -33,7 +35,15 @@ tools/
 
 # 签名密钥与本地环境变量（绝对不能提交）
 .env
+.env.local
 private_keys/
+
+# 本地构建元数据
+.keyfrom-build/
+
+# 本地工具与索引状态
+.codegraph/
+.omx/
 
 .gemini-clipboard/
 .claude/
@@ -44,6 +54,10 @@ private_keys/
 
 # dev 多实例隔离状态目录
 .dev-state/
+
+# OpenClaw 本地构建运行时与插件缓存
+vendor/openclaw-runtime/
+vendor/openclaw-plugins/
 
 docs/plans/
 docs/research/

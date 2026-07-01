@@ -1,0 +1,29 @@
+{
+  "models": [
+    {
+      "name": "BYD Atto 3",
+      "category": "compact suv",
+      "powertrain": "battery electric",
+      "notes": [
+        "Use as a catalog entry only",
+        "Do not imply live inventory or current price"
+      ]
+    },
+    {
+      "name": "Toyota Corolla",
+      "category": "sedan",
+      "powertrain": "gasoline or hybrid depending on market",
+      "notes": [
+        "Confirm exact trim and destination before quotation"
+      ]
+    },
+    {
+      "name": "Geely Coolray",
+      "category": "compact suv",
+      "powertrain": "gasoline",
+      "notes": [
+        "Confirm destination compliance before commitment"
+      ]
+    }
+  ]
+}

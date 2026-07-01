@@ -1,228 +1,531 @@
-<p align="center">
-  <img src="assets/icon.png" width="120" alt="OneClaw Logo" />
-</p>
-
-<h1 align="center">🦀 OneClaw</h1>
+# SuiXinAI — All-in-One Personal Assistant Agent
 
 <p align="center">
-  <strong>One Minute Install, One OpenClaw.</strong><br/>
-  一分钟装好，即刻开聊。零配置、零依赖的 <a href="https://github.com/openclaw/openclaw">OpenClaw</a> 桌面客户端。
+  <img src="public/logo.png" alt="SuiXinAI" width="120">
 </p>
 
 <p align="center">
-  <a href="https://github.com/oneclaw/oneclaw/releases/latest"><img src="https://img.shields.io/github/v/release/oneclaw/oneclaw?style=flat-square&color=c0392b" alt="Latest Release" /></a>
-  <a href="https://github.com/oneclaw/oneclaw/releases"><img src="https://img.shields.io/github/downloads/oneclaw/oneclaw/total?style=flat-square&color=c0392b" alt="Downloads" /></a>
-  <a href="https://github.com/oneclaw/oneclaw/blob/main/LICENSE"><img src="https://img.shields.io/github/license/oneclaw/oneclaw?style=flat-square" alt="License" /></a>
+  <strong>A 24/7 personal assistant Agent that gets things done</strong>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
+  <br>
+  <img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Windows%20%7C%20Linux%20%7C%20Mobile-brightgreen?style=for-the-badge" alt="Platform">
+  <br>
+  <img src="https://img.shields.io/badge/Electron-40-47848F?style=for-the-badge&logo=electron&logoColor=white" alt="Electron">
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
+</p>
+
+<p align="center">
+  English · <a href="README_zh.md">中文</a>
 </p>
 
 ---
 
-## 🇨🇳 中文
+**SuiXinAI** is an all-in-one personal assistant Agent. It works around the clock to handle your everyday tasks — data analysis, making presentations, generating videos, writing documents, searching the web, sending emails, scheduling tasks, and more.
 
-### ✨ 为什么选 OneClaw？
+At its core is **Cowork mode** — it executes tools, manipulates files, and runs commands in a local or sandboxed environment, all under your supervision. You can also reach the Agent via WeChat, WeCom, DingTalk, Feishu, QQ, Telegram, Discord, and more — getting work done from your phone anytime, anywhere.
 
-> **不装 Node.js，不跑 `npm install`，不配环境变量。**
-> 双击安装包 → 输入 API Key → 开始对话。就这么简单。
+## Key Features
 
-OneClaw 把 [OpenClaw](https://github.com/openclaw/openclaw) 打包成一个**开箱即用**的桌面应用。内置 Node.js 运行时和完整的 OpenClaw Gateway，你不需要任何开发工具链。
+- **All-in-One Productivity Assistant** — Data analysis, PPT creation, video generation, document writing, web search, email — covers the full range of daily work
+- **Local + Sandbox Execution** — Run tasks directly on your machine or in an OpenClaw sandbox environment
+- **Built-in Skills** — Office document generation, web search, Playwright automation, Remotion video generation, and more
+- **Windows Built-in Python Runtime** — Windows packages bundle a ready-to-use Python interpreter runtime; Python skill dependencies can be installed on demand
+- **Automation Tasks** — Create recurring tasks via conversation or the GUI — daily news digests, inbox cleanup, periodic report generation, and more
+- **Persistent Memory** — Automatically extracts user preferences and personal facts from conversations, remembers your habits across sessions, and gets smarter the more you use it
+- **Mobile via IM** — Control your Agent remotely from your phone through WeChat, WeCom, DingTalk, Feishu, QQ, Telegram, Discord, and more
+- **Permission Gating** — All tool invocations require explicit user approval before execution
+- **Cross-Platform** — macOS (Intel + Apple Silicon), Windows, Linux desktop, plus mobile coverage via IM
+- **Local Data** — SQLite storage keeps your chat history and configuration on your device
 
-它的目标很简单：**让 AI 真正替你动手做事，而不是只会聊天。** 🎯
+## How It Works
 
-| 🚀 特性 | 说明 |
-|---|---|
-| ⚡ **一分钟安装** | 下载 → 双击 → 输入 Key → 开聊，全程不超过 60 秒 |
-| 🖥️ **跨平台** | macOS (Apple Silicon / Intel) + Windows (x64 / ARM64) |
-| 🔒 **密钥本地存储** | API Key 只存在你的电脑上，绝不上传任何服务器 |
-| 🤖 **多模型管理** | Anthropic / OpenAI / Google / Kimi / 自定义接口，对话中随时切换模型 |
-| 🔄 **自动更新** | 内置 CDN 更新，升级后自动展示更新日志 |
-| 🧠 **高级记忆** | 自动保存对话上下文，支持记忆搜索和定时任务查看 |
-| 🔍 **Kimi 搜索** | 集成 Kimi Search 联网搜索能力 |
-| 💬 **多渠道集成** | 飞书 / 企业微信 / 钉钉 / QQ Bot / 微信，一键连接团队 IM |
-| 🧩 **技能商店** | 内置 clawhub 技能市场，一键安装扩展能力 |
-| 📎 **文件拖拽** | 支持拖入文件或 Cmd+V 粘贴图片，直接在对话中使用 |
-| 🛡️ **安装冲突检测** | 自动检测已有的 OpenClaw 安装，避免端口冲突 |
-| 🖋️ **终端命令** | 自动安装 `openclaw` 命令到 PATH，终端也能用 |
-| 🌐 **国内网络优化** | 预置镜像配置，国内网络环境也能顺畅使用 |
+<p align="center">
+  <img src="docs/res/architecture_v2_en.png" alt="Architecture" width="500">
+</p>
 
-### 📦 下载安装
+## Quick Start
 
-前往 [Releases 页面](https://github.com/oneclaw/oneclaw/releases/latest) 下载对应平台的安装包：
+### Prerequisites
 
-| 平台 | 架构 | 下载 |
-|---|---|---|
-| 🍎 macOS | Apple Silicon (M1/M2/M3/M4) | `OneClaw-x.x.x-arm64.dmg` |
-| 🍎 macOS | Intel | `OneClaw-x.x.x-x64.dmg` |
-| 🪟 Windows | x64 | `OneClaw-Setup-x.x.x-x64.exe` |
-| 🪟 Windows | ARM64 | `OneClaw-Setup-x.x.x-arm64.exe` |
+- **Node.js** >= 24 < 25
+- **npm**
 
-> 💡 **快速判断**：苹果 M 系列选 arm64，Intel Mac 选 x64，绝大多数 Windows 电脑选 x64。
+### Install & Develop
 
-### 🚀 三步上手
+```bash
+# Clone the repository
+git clone https://github.com/netease-youdao/SuiXinAI.git
+cd SuiXinAI
 
-```
-1️⃣  双击安装包，拖入 Applications / 点击安装
-2️⃣  选择服务商，输入 API Key
-3️⃣  开始对话！ 🎉
+# Install dependencies
+npm install
+
+# Start development (Vite dev server + Electron with hot reload)
+npm run electron:dev
 ```
 
-就这样。不需要装 Node.js，不需要 `npm`，不需要配置任何环境变量。
+The dev server runs at `http://localhost:5175` by default.
 
-### 🤖 支持的 AI 提供商
+#### Develop with OpenClaw Agent Engine
 
-- Anthropic (Claude)
-- OpenAI (GPT / Codex)
-- Google (Gemini)
-- Moonshot (moonshot.cn / moonshot.ai / Kimi Code)
-- 自定义 OpenAI / Anthropic 兼容接口
+SuiXinAI can use [OpenClaw](https://github.com/openclaw/openclaw) as its agent engine.
+The required OpenClaw version is pinned in `package.json` under `openclaw.version`.
 
-### 💡 典型使用场景
+```bash
+# First run: automatically clones and builds OpenClaw (may take several minutes)
+npm run electron:dev:openclaw
 
-- 🗂️ "帮我抓取某网站前 20 条内容，导出成 Excel"
-- 📊 "整理这批网页信息，输出一份摘要报告"
-- 📝 "按我给的规则批量处理表格和文本"
-
-你负责提需求，OneClaw 负责执行。
-
-### 🏗️ 架构
-
-```
-OneClaw (Electron)
-  ├── 🔧 Gateway 子进程  (内置 Node.js 22 + OpenClaw)
-  └── 💬 聊天窗口        (Lit 3 SPA，本地 file:// 加载)
+# Subsequent runs: skips build if the pinned version hasn't changed
+npm run electron:dev:openclaw
 ```
 
-### ❓ 常见问题
+By default, OpenClaw source is cloned/managed at `../openclaw` (relative to this repo). Override with:
 
-**Q: 我完全不会编程，可以用吗？**
-A: 当然可以！OneClaw 就是为非技术用户设计的 😊
-
-**Q: 需要自己安装 Node.js 或 Git 吗？**
-A: 不需要。应用已内置所有运行环境。
-
-**Q: Setup 之后可以换 Provider 吗？**
-A: 可以。在托盘菜单点「设置」（或 macOS `Cmd+,`）即可修改。
-
-**Q: 支持哪些聊天渠道？**
-A: 飞书、企业微信、钉钉、QQ Bot、微信。在设置 → 渠道 中扫码绑定即可。
-
----
-
-### ⭐ 觉得有用？给个 Star 吧
-
-如果 OneClaw 帮到了你，请给个 ⭐ Star 支持一下！你的每一颗 Star 都是我们持续改进的动力 💪❤️
-
-[![Star History Chart](https://api.star-history.com/svg?repos=oneclaw/oneclaw&type=Date)](https://star-history.com/#oneclaw/oneclaw&Date)
-
-### 🤝 参与贡献
-
-想参与开发？请先阅读 **[CONTRIBUTING.md](CONTRIBUTING.md)**。
-
----
-
-## 🇬🇧 English
-
-### ✨ Why OneClaw?
-
-> **No Node.js. No `npm install`. No environment variables.**
-> Download → double-click → enter API Key → start chatting. That's it.
-
-OneClaw wraps [OpenClaw](https://github.com/openclaw/openclaw) into a **ready-to-use** desktop app. It bundles a Node.js runtime and the full OpenClaw Gateway — zero dev tooling required.
-
-Its goal is simple: **AI that gets things done, not just chats.** 🎯
-
-| 🚀 Feature | Description |
-|---|---|
-| ⚡ **One-Minute Install** | Download → install → enter Key → chat, under 60 seconds |
-| 🖥️ **Cross-Platform** | macOS (Apple Silicon / Intel) + Windows (x64 / ARM64) |
-| 🔒 **Keys Stay Local** | API keys are stored on your machine, never uploaded anywhere |
-| 🤖 **Multi-Model** | Anthropic / OpenAI / Google / Kimi / Custom endpoints, switch models mid-chat |
-| 🔄 **Auto-Update** | Built-in CDN updates with "What's New" changelog after each upgrade |
-| 🧠 **Advanced Memory** | Saves conversation context across sessions, with memory search and scheduled tasks |
-| 🔍 **Kimi Search** | Integrated web search via Kimi Search |
-| 💬 **Multi-Channel** | Feishu / WeCom / DingTalk / QQ Bot / WeChat — connect your team IM in one click |
-| 🧩 **Skill Store** | Built-in clawhub marketplace for installing extension skills |
-| 📎 **File Attachments** | Drag-and-drop files or Cmd+V paste images directly into chat |
-| 🛡️ **Conflict Detection** | Auto-detects existing OpenClaw installations to avoid port conflicts |
-| 🖋️ **Terminal Command** | Auto-installs `openclaw` command to PATH |
-| 🌐 **China-Friendly** | Pre-configured mirror defaults for smoother experience in China |
-
-### 📦 Download
-
-Head to the [Releases page](https://github.com/oneclaw/oneclaw/releases/latest) and grab the installer for your platform:
-
-| Platform | Architecture | File |
-|---|---|---|
-| 🍎 macOS | Apple Silicon (M1/M2/M3/M4) | `OneClaw-x.x.x-arm64.dmg` |
-| 🍎 macOS | Intel | `OneClaw-x.x.x-x64.dmg` |
-| 🪟 Windows | x64 | `OneClaw-Setup-x.x.x-x64.exe` |
-| 🪟 Windows | ARM64 | `OneClaw-Setup-x.x.x-arm64.exe` |
-
-> 💡 **Quick tip**: Apple M-series → arm64, Intel Mac → x64, most Windows PCs → x64.
-
-### 🚀 Get Started in 3 Steps
-
-```
-1️⃣  Install — drag to Applications / click the installer
-2️⃣  Configure — pick a provider, enter your API Key
-3️⃣  Chat! 🎉
+```bash
+OPENCLAW_SRC=/path/to/openclaw npm run electron:dev:openclaw
 ```
 
-No Node.js, no `npm`, no environment setup. Just works.
+To force a rebuild even when the version hasn't changed:
 
-### 🤖 Supported AI Providers
-
-- Anthropic (Claude)
-- OpenAI (GPT / Codex)
-- Google (Gemini)
-- Moonshot (moonshot.cn / moonshot.ai / Kimi Code)
-- Custom OpenAI / Anthropic-compatible API
-
-### 💡 Typical Use Cases
-
-- 🗂️ "Scrape the top 20 posts from a website and export to Excel"
-- 📊 "Summarize a batch of webpages into a report"
-- 📝 "Process text and spreadsheets in bulk with my rules"
-
-You define the goal, OneClaw executes.
-
-### 🏗️ Architecture
-
-```
-OneClaw (Electron)
-  ├── 🔧 Gateway subprocess  (bundled Node.js 22 + OpenClaw)
-  └── 💬 Chat window         (Lit 3 SPA, loaded via file://)
+```bash
+OPENCLAW_FORCE_BUILD=1 npm run electron:dev:openclaw
 ```
 
-### ❓ FAQ
+To skip the automatic version checkout (e.g., when developing OpenClaw locally):
 
-**Q: Can I use this if I don't code at all?**
-A: Absolutely! OneClaw is designed for non-technical users 😊
+```bash
+OPENCLAW_SKIP_ENSURE=1 npm run electron:dev:openclaw
+```
 
-**Q: Do I need to install Node.js or Git myself?**
-A: No. The app includes everything it needs.
+### Production Build
 
-**Q: Can I change the provider after setup?**
-A: Yes. Open Settings from the tray menu (or `Cmd+,` on macOS) to change anytime.
+```bash
+# TypeScript compilation + Vite bundle
+npm run build
 
-**Q: Which chat channels are supported?**
-A: Feishu (Lark), WeCom, DingTalk, QQ Bot, and WeChat. Go to Settings → Channels and scan to connect.
+# ESLint check
+npm run lint
+```
 
----
+## Packaging & Distribution
 
-### ⭐ Like it? Give us a Star
+Uses [electron-builder](https://www.electron.build/) to produce platform-specific installers. Output goes to `release/`.
 
-If OneClaw saves you time, drop a ⭐ Star — it means a lot and keeps us going! 💪❤️
+```bash
+# macOS (.dmg)
+npm run dist:mac
 
----
+# macOS - Intel only
+npm run dist:mac:x64
 
-### 🤝 Contributing
+# macOS - Apple Silicon only
+npm run dist:mac:arm64
 
-Want to contribute? Please read **[CONTRIBUTING.md](CONTRIBUTING.md)** first.
+# macOS - Universal (both architectures)
+npm run dist:mac:universal
 
----
+# Windows (.exe NSIS installer)
+npm run dist:win
 
-## 📄 License
+# Linux (.AppImage & .deb)
+npm run dist:linux
+```
 
-GNU Affero General Public License v3.0 (`AGPL-3.0-only`).
+Desktop packaging (macOS / Windows / Linux) bundles a prebuilt OpenClaw runtime under `Resources/cfmind`.
+The pinned OpenClaw version (`package.json` → `openclaw.version`) is automatically fetched and built during packaging — no manual setup needed.
+The build is cached: if the runtime for the pinned version already exists locally, the build step is skipped automatically.
 
-Commercial use is allowed, but if you modify and distribute this software, or provide a modified version over a network, you must provide the corresponding source code under AGPL v3.
+You can also build OpenClaw runtime manually:
+
+```bash
+# Build runtime for current host platform (auto-detect mac/win/linux + arch)
+npm run openclaw:runtime:host
+
+# Build explicit targets
+npm run openclaw:runtime:mac-arm64
+npm run openclaw:runtime:win-x64
+npm run openclaw:runtime:linux-x64
+```
+
+Override OpenClaw source path with an environment variable when needed:
+
+```bash
+OPENCLAW_SRC=/path/to/openclaw npm run dist:win
+```
+
+Windows builds bundle a portable Python runtime under `resources/python-win` (included as installer resource `python-win`), so end users do not need to install Python manually.
+The bundled runtime is interpreter-focused and does not preinstall SuiXinAI skill Python packages; those can be installed at runtime on demand.
+By default, packaging downloads the official Python embeddable runtime from python.org if no prebuilt archive is provided.
+For offline/non-network builds, provide a prebuilt runtime archive explicitly.
+
+Offline/runtime source options for packaging:
+- `LOBSTERAI_PORTABLE_PYTHON_ARCHIVE`: Local prebuilt runtime archive path (recommended for offline CI/CD)
+- `LOBSTERAI_PORTABLE_PYTHON_URL`: Download URL for the prebuilt runtime archive
+- `LOBSTERAI_WINDOWS_EMBED_PYTHON_VERSION` / `LOBSTERAI_WINDOWS_EMBED_PYTHON_URL` / `LOBSTERAI_WINDOWS_GET_PIP_URL`: Optional overrides for Windows-host bootstrap sources
+
+## Architecture
+
+SuiXinAI uses Electron's strict process isolation. All cross-process communication goes through IPC.
+
+### Process Model
+
+**Main Process** (`src/main/main.ts`):
+- Window lifecycle management
+- SQLite persistence
+- OpenClaw agent engine (primary) + CoworkEngineRouter dispatch layer
+- IM Gateways — WeChat, WeCom, DingTalk, Feishu, QQ, Telegram, Discord, POPO remote access
+- 40+ IPC channel handlers
+- Security: context isolation enabled, node integration disabled, sandbox enabled
+
+**Preload Script** (`src/main/preload.ts`):
+- Exposes `window.electron` API via `contextBridge`
+- Includes `cowork` namespace for session management and stream events
+
+**Renderer Process** (`src/renderer/`):
+- React 18 + Redux Toolkit + Tailwind CSS
+- All UI and business logic
+- Communicates with main process exclusively through IPC
+
+### Directory Structure
+
+```
+src/
+├── main/                           # Electron main process
+│   ├── main.ts                     # Entry point, IPC handlers
+│   ├── preload.ts                  # Security bridge
+│   ├── sqliteStore.ts              # SQLite storage
+│   ├── coworkStore.ts              # Session/message CRUD
+│   ├── skillManager.ts             # Skill management
+│   ├── im/                         # IM gateways (WeChat/WeCom/DingTalk/Feishu/QQ/Telegram/Discord/POPO)
+│   └── libs/
+│       ├── agentEngine/
+│       │   ├── coworkEngineRouter.ts    # Dispatch layer (routes sessions to the active engine)
+│       │   ├── openclawRuntimeAdapter.ts # Primary OpenClaw gateway adapter
+│       │   └── claudeRuntimeAdapter.ts  # Legacy built-in adapter (deprecated)
+│       ├── coworkRunner.ts          # Legacy built-in executor (deprecated)
+│       ├── openclawEngineManager.ts # OpenClaw runtime lifecycle (install/start/status)
+│       ├── openclawConfigSync.ts    # Syncs cowork config → OpenClaw config files
+│       └── coworkMemoryExtractor.ts # Memory extraction
+│
+├── renderer/                        # React frontend
+│   ├── App.tsx                     # Root component
+│   ├── types/                      # TypeScript definitions
+│   ├── store/slices/               # Redux state slices
+│   ├── services/                   # Business logic (API/IPC/i18n)
+│   └── components/
+│       ├── cowork/                 # Cowork UI components
+│       ├── artifacts/              # Artifact renderers
+│       ├── skills/                 # Skill management UI
+│       ├── im/                     # IM integration UI
+│       └── Settings.tsx            # Settings panel
+│
+SKILLs/                              # Skill definitions
+├── skills.config.json              # Skill enable/disable and ordering
+├── web-search/                     # Web search
+├── docx/                           # Word document generation
+├── xlsx/                           # Excel spreadsheets
+├── pptx/                           # PowerPoint presentations
+├── pdf/                            # PDF processing
+├── remotion/                       # Video generation
+├── playwright/                     # Web automation
+└── ...                             # More skills
+```
+
+## Cowork System
+
+Cowork is the core feature of SuiXinAI — an AI working session system powered by OpenClaw as the primary agent engine. Designed for productivity scenarios, it can autonomously complete complex tasks like data analysis, document generation, and information retrieval.
+
+### Execution Modes
+
+| Mode | Description |
+|------|-------------|
+| `auto` | Automatically selects based on context |
+| `local` | Direct local execution, full speed |
+
+### Stream Events
+
+Cowork uses IPC events for real-time bidirectional communication:
+
+- `message` — New message added to the session
+- `messageUpdate` — Incremental streaming content update
+- `permissionRequest` — Tool execution requires user approval
+- `complete` — Session execution finished
+- `error` — Execution error occurred
+
+### Permission Control
+
+All tool invocations involving file system access, terminal commands, or network requests require explicit user approval in the `CoworkPermissionModal`. Both single-use and session-level approvals are supported.
+
+## Skills System
+
+SuiXinAI ships with 29 built-in skills covering productivity, creative, investment research, and automation scenarios, configured via `SKILLs/skills.config.json`:
+
+| Skill | Function | Typical Use Case |
+|-------|----------|-----------------|
+| web-search | Web search | Information retrieval, research |
+| docx | Word document generation | Reports, proposals |
+| xlsx | Excel spreadsheet generation | Data analysis, dashboards |
+| pptx | PowerPoint creation | Presentations, business reviews |
+| pdf | PDF processing | Document parsing, format conversion |
+| remotion | Video generation (Remotion) | Promo videos, data visualization animations |
+| seedance | AI video generation (Seedance) | Text-to-video, image-to-video |
+| seedream | AI image generation (Seedream) | Text-to-image, image editing and fusion |
+| playwright | Web automation | Browser tasks, automated testing |
+| canvas-design | Canvas drawing and design | Posters, chart design |
+| frontend-design | Frontend UI design | Prototyping, page design |
+| develop-web-game | Web game development | Quick game prototypes |
+| stock-analyzer | Stock deep analysis | A-share research, valuation and financials |
+| stock-announcements | Stock announcement retrieval | Listed company filings, disclosure lookup |
+| stock-explorer | Stock information explorer | Basic stock info, market overview |
+| content-planner | Content planning | Topic strategy, content calendar creation |
+| article-writer | Article writing | Multi-style long-form content, social media posts |
+| daily-trending | Daily trending | Hot topic aggregation, trend tracking |
+| films-search | Film/TV resource search | Movie and series cloud-drive download links |
+| music-search | Music resource search | Song and album cloud-drive download links |
+| technology-news-search | Tech news search | Programming, AI, and IT industry updates (disabled by default) |
+| weather | Weather queries | Weather information |
+| local-tools | Local system tools | File management, system operations |
+| imap-smtp-email | Email send/receive | Email processing, auto-replies |
+| create-plan | Plan authoring | Project planning, task breakdown |
+| youdaonote | Youdao Note | Note management, to-dos, web clipping |
+| skill-vetter | Skill security audit | Safety check before installing third-party skills |
+| skill-creator | Custom skill creation | Extend new capabilities |
+
+Custom skills can be created via `skill-creator` and hot-loaded at runtime.
+
+## Automation Tasks
+
+SuiXinAI supports automation tasks that let the Agent automatically execute recurring work on a set schedule.
+
+### How to Create
+
+- **Conversational** — Tell the Agent in natural language (e.g., "collect tech news for me every morning at 9 AM"), and it will create the automation task automatically
+- **GUI** — Add tasks manually in the Automation Tasks management panel with a visual interface for configuring timing and task content
+
+### Typical Scenarios
+
+| Scenario | Example |
+|----------|---------|
+| News Collection | Automatically gather industry news and generate a summary every morning |
+| Inbox Cleanup | Periodically check your inbox, categorize emails, and summarize important ones |
+| Data Reports | Generate a weekly business data analysis report |
+| Content Monitoring | Regularly check specific websites for changes and send notifications |
+| Work Reminders | Generate to-do lists or meeting notes on a schedule |
+
+Automation tasks are powered by Cron expressions, supporting minute, hourly, daily, weekly, and monthly intervals. When a task fires, it automatically starts a Cowork session. Results can be viewed on the desktop or pushed to your phone via IM.
+
+## IM Integration — Mobile Remote Control
+
+SuiXinAI can bridge the Agent to multiple IM platforms. Send a message from your phone via IM to remotely trigger the desktop Agent — command your personal assistant anytime, anywhere.
+
+| Platform | Protocol | Description |
+|----------|----------|-------------|
+| WeChat | OpenClaw gateway | WeChat account integration, supports DMs and group chats |
+| WeCom | OpenClaw gateway | WeCom app bot, supports DMs and group chats |
+| DingTalk | OpenClaw gateway | Enterprise bot, supports multiple instances |
+| Feishu | OpenClaw gateway | Feishu/Lark app bot, supports multiple instances |
+| QQ | OpenClaw gateway | QQ bot (official Bot API), supports multiple instances |
+| Telegram | OpenClaw gateway | Bot API, supports webhook and polling |
+| Discord | OpenClaw gateway | Discord bot, supports servers and DMs |
+| NetEase IM | node-nim V2 SDK | [NetEase IM P2P messaging](https://doc.yunxin.163.com/messaging2/getting-started) |
+| NetEase Bee | node-nim V2 SDK | [NetEase Bee personal digital assistant](https://wp.m.163.com/163/html/bee/lobsterai_guide/index.html) |
+| NetEase POPO | OpenClaw gateway | NetEase POPO enterprise IM, supports WebSocket and Webhook |
+
+Configure the corresponding platform Token/Secret in the Settings panel to enable. Once set up, you can send instructions directly to the Agent from your phone IM (e.g., "analyze this dataset", "make a weekly summary PPT"), and the Agent will execute on the desktop and return results.
+
+## Persistent Memory
+
+SuiXinAI's memory system is built on OpenClaw and persists information as files in the working directory, so the Agent remembers your preferences and context across sessions.
+
+### Memory File Structure
+
+| File | Purpose |
+|------|---------|
+| `MEMORY.md` | Durable facts, preferences, and decisions — loaded automatically at session start |
+| `memory/YYYY-MM-DD.md` | Daily notes — preserves recent context |
+| `USER.md` | User profile (name, occupation, habits, long-term info) |
+| `SOUL.md` | Agent personality and behavioral principles |
+
+### How Memories Are Written
+
+- **Explicit instructions** — Say "remember that…" or "from now on reply in English," and the Agent calls the `write` tool to save to `MEMORY.md` before acknowledging — no silent "mental notes"
+- **Agent-initiated** — The Agent can proactively write important findings, configurations, or environment notes to memory files during task execution, without explicit prompting
+- **GUI management** — Add, edit, or delete entries in `MEMORY.md` directly from the Settings panel; keyword search is supported
+
+### How It Works
+
+At the start of every session, OpenClaw reads `SOUL.md`, `USER.md`, today's and yesterday's `memory/YYYY-MM-DD.md`, and `MEMORY.md` in sequence, injecting them as context. This lets the Agent pick up where it left off without you needing to re-explain preferences.
+
+Memory writes go through file tools — there is no background extraction or inference. Content is fully under user or Agent control.
+
+## Data Storage
+
+All data is stored in a local SQLite database (`lobsterai.sqlite` in the user data directory).
+
+| Table | Purpose |
+|-------|---------|
+| `kv` | App configuration key-value pairs |
+| `cowork_config` | Cowork settings (working directory, system prompt, execution mode) |
+| `cowork_sessions` | Session metadata |
+| `cowork_messages` | Message history |
+| `user_memories` | User memory entries |
+| `user_memory_sources` | Memory source tracking |
+| `agents` | Custom Agent configurations |
+| `mcp_servers` | MCP server configurations |
+| `im_config` | IM gateway config (tokens/secrets per platform) |
+| `im_session_mappings` | Mapping between IM conversations and Cowork sessions |
+| `scheduled_task_meta` | Scheduled task metadata (origin and binding info) |
+
+## Security Model
+
+SuiXinAI enforces security at multiple layers:
+
+- **Process Isolation** — Context isolation enabled, node integration disabled
+- **Permission Gating** — Tool invocations require explicit user approval
+- **Sandbox Execution** — Optional OpenClaw sandbox for isolated execution
+- **Content Security** — HTML sandbox, DOMPurify, Mermaid strict mode
+- **Workspace Boundaries** — File operations restricted to the designated working directory
+- **IPC Validation** — All cross-process calls are type-checked
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Electron 40 |
+| Frontend | React 18 + TypeScript |
+| Build | Vite 5 |
+| Styling | Tailwind CSS 3 |
+| State | Redux Toolkit |
+| AI Engine | OpenClaw (primary) |
+| Storage | better-sqlite3 |
+| Markdown | react-markdown + remark-gfm + rehype-katex |
+| Diagrams | Mermaid |
+| Security | DOMPurify |
+| IM | @larksuiteoapi/node-sdk · nim-web-sdk-ng · @wecom/wecom-aibot-sdk · OpenClaw gateway (DingTalk / Telegram / Discord / QQ etc.) |
+
+## Configuration
+
+### App Configuration
+
+App-level config is stored in the SQLite `kv` table, editable through the Settings panel.
+
+### Cowork Configuration
+
+Cowork session config includes:
+
+- **Working Directory** — Root directory for Agent operations
+- **System Prompt** — Customize Agent behavior
+- **Execution Mode** — `auto` / `local`
+
+### Internationalization
+
+Currently English and Chinese are supported. Switch languages in the Settings panel.
+
+## OpenClaw Version Management
+
+SuiXinAI pins its OpenClaw dependency to a specific release version, declared in `package.json`:
+
+```json
+{
+  "openclaw": {
+    "version": "v2026.3.2",
+    "repo": "https://github.com/openclaw/openclaw.git"
+  }
+}
+```
+
+### How It Works
+
+| Step | What happens | When |
+|------|-------------|------|
+| **Version ensure** | Clones or checks out the pinned tag in `../openclaw` | Before every runtime build |
+| **Build cache check** | Compares pinned version with `runtime-build-info.json` | Before every runtime build |
+| **Full build** | `pnpm install` → `build` → `ui:build` → pack to asar | Only when version changed |
+
+### Updating OpenClaw Version
+
+1. Change `openclaw.version` in `package.json` to the desired release tag
+2. Run `npm run electron:dev:openclaw` or `npm run dist:win` — the new version is fetched and built automatically
+3. Commit the `package.json` change
+
+### Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `OPENCLAW_SRC` | Path to OpenClaw source directory | `../openclaw` |
+| `OPENCLAW_FORCE_BUILD` | Set to `1` to force rebuild even if version matches | — |
+| `OPENCLAW_SKIP_ENSURE` | Set to `1` to skip automatic version checkout | — |
+| `LOBSTERAI_SQLITE_BACKUP_ALWAYS_ON_STARTUP` | Set to `1` or `true` to force an automatic backup on every app startup for QA/testing | — |
+
+## Development Guidelines
+
+- TypeScript strict mode, functional components + Hooks
+- 2-space indentation, single quotes, semicolons
+- Components: `PascalCase`; functions/variables: `camelCase`; Redux slices: `*Slice.ts`
+- Tailwind CSS preferred; avoid custom CSS
+- Commit messages follow `type: short imperative summary` (e.g., `feat: add artifact toolbar`)
+
+## Testing
+
+Unit tests use [Vitest](https://vitest.dev/) and are co-located with the source files they cover.
+
+```bash
+# run all tests
+npm test
+
+# run tests for a specific module (Vitest filename filter)
+npm test -- logger
+npm test -- cowork
+```
+
+New test files go next to the source file they test, using the `.test.ts` extension:
+
+```
+src/main/
+├── foo.ts
+└── foo.test.ts
+```
+
+Example (`src/main/logger.test.ts`):
+
+```ts
+import { test, expect } from 'vitest';
+
+test('log file pattern matches daily name', () => {
+  expect(/^main-\d{4}-\d{2}-\d{2}\.log$/.test('main-2026-03-20.log')).toBe(true);
+});
+```
+
+Avoid importing Electron-only APIs (e.g. `electron-log`) in tests — inline any logic that depends on them instead.
+
+
+
+## Community
+
+Join our WeChat group to get help, share feedback, and stay up to date:
+
+<p align="center">
+  <img src="https://shared.ydstatic.com/market/souti/fihserChatWeb/online/1.3.5/dist/assets/wechat_group-ButC0ZCl.jpg" alt="WeChat Community QR Code" width="200">
+</p>
+
+## Contributing
+
+1. Fork this repository
+2. Create your feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'feat: add something'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+Please include in your PR description: a summary of changes, linked issue (if any), screenshots for UI changes, and notes on any Electron-specific behavior changes.
+
+## License
+
+[MIT License](LICENSE)
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=netease-youdao/SuiXinAI&type=date&legend=top-left)](https://www.star-history.com/#netease-youdao/SuiXinAI&type=date&legend=top-left)
